@@ -44,6 +44,7 @@ split_string_return_struct split_string(std::string usr_inp){
             for(int i = 0; i <= num_length; i++){
                 temp[i] = usr_inp[i + num_start_index];
             }
+            temp[num_length + 1] = ' ';
 
             pNums[nums_to_set] = std::atof(temp);
             nums_to_set++;
@@ -72,7 +73,7 @@ int main()
     char *pOps;
     int nums_size;
     int ops_size;
-    std::string usr_inp;
+    std::string usr_inp = "199+2";
     std::cin >> usr_inp;
     clock_t tStart = clock();
 
@@ -81,15 +82,28 @@ int main()
     pOps = return_struct.pOps;
     nums_size = return_struct.nums_size;
     ops_size = return_struct.ops_size;
-    
+    double eval = pNums[0];
     for(int i = 0; i < ops_size; i++){
-        std::cout << pOps[i] << '\n';
-    }
-    for(int i = 0; i < nums_size; i++){
-        std::cout << pNums[i] << '\n';
+        switch(pOps[i])
+        {
+        case '+':
+            eval += pNums[i + 1];
+            break;
+        case '-':
+            eval -= pNums[i + 1];
+            break;
+        case '*':
+            eval *= pNums[i + 1];
+            break;
+        case '/':
+            eval /= pNums[i + 1];
+            break;
+        default:
+            break;
+        }
     }
 
-
+    std::cout << eval << '\n';
     printf("Time taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
 
     delete[] pNums;
