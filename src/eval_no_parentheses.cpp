@@ -13,7 +13,15 @@ double eval_no_parentheses(split_string_return_struct gotten_struct){
     pOps = gotten_struct.pOps;
     nums_size = gotten_struct.nums_size;
     ops_size = gotten_struct.ops_size;
+    std::cout << ops_size << "eval" << '\n';
 
+    // for(int i = 0; i < nums_size; i++){
+    //     std::cout << pNums[i] << '\n';
+    // }
+    // for(int i = 0; i < ops_size; i++){
+    //     std::cout << pOps[i] << '\n';
+    // }
+    
     bool did_finish_eval = false;
 
     while (!did_finish_eval){
@@ -49,6 +57,8 @@ double eval_no_parentheses(split_string_return_struct gotten_struct){
 
     double eval = pNums[0];
     for(int i = 0; i < ops_size; i++){
+            std::cout << "cos" << '\n';
+
         switch(pOps[i])
         {
         case '+':

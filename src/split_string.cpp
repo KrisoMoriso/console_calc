@@ -12,19 +12,21 @@ split_string_return_struct split_string(std::string usr_inp){
     char *pOps = NULL;
     int ops_to_set = 0;
 
-    int nums_size = 1;
+    int nums_size = 0;
     int ops_size = 0;
     for(int i = 0; i < usr_inp.length(); i++){
-        if(usr_inp[i] == '+' or usr_inp[i] == '-' or usr_inp[i] == '/' or usr_inp[i] == '*'){
-            nums_size++;
+        if(usr_inp[i] == '+' or usr_inp[i] == '-' or usr_inp[i] == '/' or usr_inp[i] == '*' or usr_inp[i] == '(' or usr_inp[i] == ')'){
             ops_size++;
+        } else {
+            
+            nums_size++;
         }
     }
     pNums = new double[nums_size];
     pOps = new char[ops_size];
 
     for(int i = 0; i <= usr_inp.length(); i++){
-        if(usr_inp[i] == '+' or usr_inp[i] == '-' or usr_inp[i] == '/' or usr_inp[i] == '*' or i == usr_inp.length()){
+        if(usr_inp[i] == '+' or usr_inp[i] == '-' or usr_inp[i] == '/' or usr_inp[i] == '*' or usr_inp[i] == '(' or usr_inp[i] == ')' or i == usr_inp.length()){
             num_end_index = i - 1;
             if (!(i == usr_inp.length())){
                 pOps[ops_to_set] = usr_inp[i];
@@ -54,6 +56,4 @@ split_string_return_struct split_string(std::string usr_inp){
     return_struct.ops_size = ops_size;
 
     return return_struct;
-
-    
 }
