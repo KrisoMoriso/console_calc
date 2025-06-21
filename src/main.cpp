@@ -10,8 +10,8 @@ int main()
     char *pOps;
     int nums_size;
     int ops_size;
-    std::string usr_inp = "2+(2+2*2)";
-    // std::cin >> usr_inp;
+    std::string usr_inp = "2+(2+2*2)+((2+2)*2)";
+    std::cin >> usr_inp;
     clock_t tStart = clock();
 
     split_string_return_struct return_struct = split_string(usr_inp);
@@ -19,7 +19,7 @@ int main()
     
     
     return_struct = eval_parentheses(return_struct);
-    std::cout << return_struct.nums_size << " nums_size" << '\n';
+    // std::cout << return_struct.nums_size << " nums_size" << '\n';
     pNums = return_struct.pNums;
     pOps = return_struct.pOps;
     nums_size = return_struct.nums_size;

@@ -22,6 +22,9 @@ split_string_return_struct split_string(std::string usr_inp){
             nums_size++;
         }
     }
+    std::cout << "nums_size: " << nums_size;
+    std::cout << "ops_size: " << ops_size;
+
     pNums = new double[nums_size];
     pOps = new char[ops_size];
 

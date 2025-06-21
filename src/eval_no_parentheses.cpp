@@ -13,7 +13,7 @@ double eval_no_parentheses(split_string_return_struct gotten_struct){
     pOps = gotten_struct.pOps;
     nums_size = gotten_struct.nums_size;
     ops_size = gotten_struct.ops_size;
-    std::cout << ops_size << "eval" << '\n';
+    // std::cout << ops_size << " ops_size in eval no parentheses ln 16" << '\n';
 
     // for(int i = 0; i < nums_size; i++){
     //     std::cout << pNums[i] << '\n';
@@ -26,7 +26,7 @@ double eval_no_parentheses(split_string_return_struct gotten_struct){
 
     while (!did_finish_eval){
         did_finish_eval = true;
-        for(int i = 0; i <= ops_size; i++){
+        for(int i = 0; i < ops_size; i++){
             if(pOps[i] == '*' or pOps[i] == '/'){
                 double temp_eval;
                 switch (pOps[i])
