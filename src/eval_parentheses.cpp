@@ -39,7 +39,7 @@ split_string_return_struct eval_parentheses(split_string_return_struct gotten_st
         double temp_pNums[close_parentheses_index - open_parentheses_index];
         char temp_pOps[close_parentheses_index - open_parentheses_index];
 
-        int temp_nums_size = close_parentheses_index - open_parentheses_index;
+        int temp_nums_size = close_parentheses_index - open_parentheses_index;//2
         int temp_ops_size = close_parentheses_index - open_parentheses_index - 1;
 
         for(int i = 0; i < temp_nums_size; i++){

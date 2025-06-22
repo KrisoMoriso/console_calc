@@ -18,7 +18,7 @@ int main()
     
     
     
-    return_struct = eval_parentheses(return_struct);
+    // return_struct = eval_parentheses(return_struct);
     // std::cout << return_struct.nums_size << " nums_size" << '\n';
     pNums = return_struct.pNums;
     pOps = return_struct.pOps;
@@ -37,8 +37,8 @@ int main()
 
 
     
-    double eval = eval_no_parentheses(return_struct);
-    std::cout << eval << " ans" << '\n';
+    // double eval = eval_no_parentheses(return_struct);
+    // std::cout << eval << " ans" << '\n';
     printf("Time taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
 
     delete[] pNums;
